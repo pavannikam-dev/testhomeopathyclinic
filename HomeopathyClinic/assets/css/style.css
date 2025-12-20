@@ -266,7 +266,7 @@ img {
 .marquee {
   display: flex;
   width: max-content;
-  animation: marquee 40s linear infinite;
+  animation: marquee 25s linear infinite;
 }
 
 .marquee-text {
@@ -305,6 +305,7 @@ img {
     font-size: 0.9em;
   }
 }
+
 
 
 
