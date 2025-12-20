@@ -253,49 +253,58 @@ img {
         text-align: center;
     }
 }
-
 .marquee-container {
   overflow: hidden;
-  background: linear-gradient(to right, #a8e6cf, #dcedc1); /* colorful gradient */
+  background: linear-gradient(to right, #a8e6cf, #dcedc1);
   border: 2px solid #56ab2f;
   border-radius: 10px;
   padding: 10px 0;
 }
 
+/* Common text styles */
 .marquee {
   display: inline-block;
   white-space: nowrap;
-  animation: scroll 60s linear infinite; /* desktop speed */
-  font-size: 1.2em;
   font-weight: bold;
 }
 
 .highlight {
-  color: #ff6f61; /* highlight key text */
+  color: #ff6f61;
 }
 
-/* Desktop / general keyframes */
-@keyframes scroll {
-  0% { transform: translateX(0%); }        /* start visible */
-  100% { transform: translateX(-100%); }   /* scroll completely left */
+/* Desktop marquee */
+.desktop-marquee {
+  display: block;       /* visible on desktop */
+}
+.mobile-marquee {
+  display: none;        /* hidden on desktop */
 }
 
-/* Tablets */
+.desktop-marquee .marquee {
+  font-size: 1.2em;
+  animation: scroll-desktop 40s linear infinite;  /* moderate speed for desktop */
+}
+
+@keyframes scroll-desktop {
+  0%   { transform: translateX(100vw); }
+  100% { transform: translateX(-100%); }
+}
+
+/* Mobile marquee */
 @media (max-width: 768px) {
-  .marquee {
-    font-size: 1em;
-    animation: scroll 50s linear infinite; /* slower on tablet */
-  }
-}
-
-/* Mobile */
-@media (max-width: 480px) {
-  .marquee {
+  .desktop-marquee { display: none; }  /* hide desktop marquee on tablet/mobile */
+  .mobile-marquee { display: block; }  /* show mobile marquee */
+  
+  .mobile-marquee .marquee {
     font-size: 0.9em;
-    animation: scroll 80s linear infinite; /* slow and readable on mobile */
+    animation: scroll-mobile 80s linear infinite; /* slow for mobile */
   }
 }
 
+@keyframes scroll-mobile {
+  0%   { transform: translateX(100vw); }
+  100% { transform: translateX(-100%); }
+}
 
 
 
