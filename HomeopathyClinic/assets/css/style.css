@@ -299,12 +299,13 @@ img {
 /* Mobile */
 @media (max-width: 480px) {
   .marquee {
-    animation-duration: 50s;
+    animation-duration: 15s;
   }
   .marquee-text {
     font-size: 0.9em;
   }
 }
+
 
 
 
