@@ -255,49 +255,6 @@ img {
 }
 
 
-.marquee-container {
-  overflow: hidden;
-  background: linear-gradient(to right, #a8e6cf, #dcedc1);
-  border: 2px solid #56ab2f;
-  border-radius: 10px;
-  padding: 10px 0;
-}
-
-/* Text */
-.marquee {
-  display: inline-block;
-  white-space: nowrap;
-  font-weight: bold;
-  font-size: 1.2em;             /* desktop font */
-  animation: scroll 40s linear infinite; /* desktop scroll */
-}
-
-.highlight {
-  color: #ff6f61;
-}
-
-/* Animation */
-@keyframes scroll {
-  0% { transform: translateX(100%); }  /* start fully right */
-  100% { transform: translateX(-100%); } /* move fully left */
-}
-
-/* Tablet */
-@media (max-width: 768px) {
-  .marquee {
-    font-size: 1em;
-    animation: scroll 35s linear infinite; /* slower */
-  }
-}
-
-/* Mobile */
-@media (max-width: 480px) {
-  .marquee {
-    font-size: 0.9em;
-    animation: scroll 25s linear infinite; /* slow, readable */
-  }
-}
-
 
 
 
