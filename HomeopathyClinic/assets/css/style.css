@@ -261,49 +261,38 @@ img {
   padding: 10px 0;
 }
 
-/* Common text styles */
+/* Text */
 .marquee {
   display: inline-block;
   white-space: nowrap;
   font-weight: bold;
+  font-size: 1.2em;             /* default desktop font */
+  animation: scroll 40s linear infinite; /* default desktop speed */
 }
 
 .highlight {
   color: #ff6f61;
 }
 
-/* Desktop marquee */
-.desktop-marquee {
-  display: block;       /* visible on desktop */
-}
-.mobile-marquee {
-  display: none;        /* hidden on desktop */
+/* Scroll animation */
+@keyframes scroll {
+  0% { transform: translateX(100vw); }   /* start off-screen right */
+  100% { transform: translateX(-100%); } /* scroll completely left */
 }
 
-.desktop-marquee .marquee {
-  font-size: 1.2em;
-  animation: scroll-desktop 40s linear infinite;  /* moderate speed for desktop */
-}
-
-@keyframes scroll-desktop {
-  0%   { transform: translateX(100vw); }
-  100% { transform: translateX(-100%); }
-}
-
-/* Mobile marquee */
+/* Tablets and Mobile */
 @media (max-width: 768px) {
-  .desktop-marquee { display: none; }  /* hide desktop marquee on tablet/mobile */
-  .mobile-marquee { display: block; }  /* show mobile marquee */
-  
-  .mobile-marquee .marquee {
-    font-size: 0.9em;
-    animation: scroll-mobile 80s linear infinite; /* slow for mobile */
+  .marquee {
+    font-size: 1em;             /* slightly smaller on tablet */
+    animation-duration: 60s;    /* slower scroll on smaller screens */
   }
 }
 
-@keyframes scroll-mobile {
-  0%   { transform: translateX(100vw); }
-  100% { transform: translateX(-100%); }
+@media (max-width: 480px) {
+  .marquee {
+    font-size: 0.9em;           /* mobile font */
+    animation-duration: 80s;    /* very slow scroll on mobile */
+  }
 }
 
 
