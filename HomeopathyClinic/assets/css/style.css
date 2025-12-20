@@ -265,7 +265,7 @@ img {
 .marquee {
   display: inline-block;
   white-space: nowrap;
-  animation: scroll 50s linear infinite; /* desktop speed */
+  animation: scroll 30s linear infinite; /* desktop speed */
   font-size: 1.2em;
   font-weight: bold;
 }
@@ -295,6 +295,7 @@ img {
     animation: scroll 10s linear infinite; /* slow and readable on mobile */
   }
 }
+
 
 
 
