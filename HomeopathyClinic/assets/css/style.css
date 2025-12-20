@@ -292,9 +292,10 @@ img {
 @media (max-width: 480px) {
   .marquee {
     font-size: 0.9em;
-    animation: scroll 30s linear infinite; /* slow and readable on mobile */
+    animation: scroll 60s linear infinite; /* slow and readable on mobile */
   }
 }
+
 
 
 
