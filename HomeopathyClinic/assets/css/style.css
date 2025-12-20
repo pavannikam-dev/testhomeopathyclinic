@@ -293,5 +293,11 @@ img {
   }
 }
 
+ @keyframes scroll-mobile {
+    0% { transform: translateX(0%); }     /* start visible */
+    100% { transform: translateX(-100%); } /* scroll to left */
+  }
+
+
 
 
