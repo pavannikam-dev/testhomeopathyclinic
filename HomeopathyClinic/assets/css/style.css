@@ -253,6 +253,7 @@ img {
         text-align: center;
     }
 }
+
 .marquee-container {
   overflow: hidden;
   background: linear-gradient(to right, #a8e6cf, #dcedc1);
@@ -264,7 +265,7 @@ img {
 .marquee {
   display: inline-block;
   white-space: nowrap;
-  animation: scroll 15s linear infinite;
+  animation: scroll 30s linear infinite; /* slower scroll by increasing duration */
   font-size: 1.2em;
   font-weight: bold;
 }
@@ -273,17 +274,16 @@ img {
   color: #ff6f61;
 }
 
-/* Desktop / general animation */
 @keyframes scroll {
-  0% { transform: translateX(0%); }      /* Start fully visible */
-  100% { transform: translateX(-100%); } /* Scroll to left */
+  0% { transform: translateX(0%); } 
+  100% { transform: translateX(-100%); }
 }
 
 /* Tablets */
 @media (max-width: 768px) {
   .marquee {
     font-size: 1em;
-    animation: scroll 12s linear infinite; /* slightly faster on tablet */
+    animation: scroll 25s linear infinite; /* slower on tablet */
   }
 }
 
@@ -291,9 +291,10 @@ img {
 @media (max-width: 480px) {
   .marquee {
     font-size: 0.9em;
-    animation: scroll 50s linear infinite;  /* faster scroll on mobile */
+    animation: scroll 20s linear infinite;  /* slower on mobile */
   }
 }
+
 
 
 
