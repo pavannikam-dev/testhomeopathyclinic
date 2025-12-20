@@ -263,37 +263,37 @@ img {
   padding: 10px 0;
 }
 
-/* Text */
 .marquee {
   display: inline-block;
   white-space: nowrap;
   font-weight: bold;
-  font-size: 1.2em;             /* default desktop font */
-  animation: scroll 40s linear infinite; /* default desktop speed */
+  font-size: 1.2em;
+  animation: scroll 40s linear infinite;
 }
 
 .highlight {
   color: #ff6f61;
 }
 
-/* Scroll animation */
+/* Scroll animation: move full viewport width + text width */
 @keyframes scroll {
-  0% { transform: translateX(100vw); }   /* start off-screen right */
-  100% { transform: translateX(-100%); } /* scroll completely left */
+  0% { transform: translateX(calc(100vw)); }    /* start off-screen right */
+  100% { transform: translateX(calc(-100%)); }  /* move completely left */
 }
 
-/* Tablets and Mobile */
+/* Tablets */
 @media (max-width: 768px) {
   .marquee {
-    font-size: 1em;             /* slightly smaller on tablet */
-    animation-duration: 60s;    /* slower scroll on smaller screens */
+    font-size: 1em;
+    animation-duration: 60s; /* slower on tablet */
   }
 }
 
+/* Mobile */
 @media (max-width: 480px) {
   .marquee {
-    font-size: 0.9em;           /* mobile font */
-    animation-duration: 80s;    /* very slow scroll on mobile */
+    font-size: 0.9em;
+    animation-duration: 100s; /* very slow on mobile */
   }
 }
 
