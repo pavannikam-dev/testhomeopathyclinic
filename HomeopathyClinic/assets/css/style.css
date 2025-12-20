@@ -256,7 +256,7 @@ img {
 
 .marquee-container {
   overflow: hidden;
-  background: linear-gradient(to right, #a8e6cf, #dcedc1);
+  background: linear-gradient(to right, #a8e6cf, #dcedc1); /* colorful gradient */
   border: 2px solid #56ab2f;
   border-radius: 10px;
   padding: 10px 0;
@@ -265,25 +265,26 @@ img {
 .marquee {
   display: inline-block;
   white-space: nowrap;
-  animation: scroll 30s linear infinite; /* slower scroll by increasing duration */
+  animation: scroll 50s linear infinite; /* desktop speed */
   font-size: 1.2em;
   font-weight: bold;
 }
 
 .highlight {
-  color: #ff6f61;
+  color: #ff6f61; /* highlight key text */
 }
 
+/* Desktop / general keyframes */
 @keyframes scroll {
-  0% { transform: translateX(0%); } 
-  100% { transform: translateX(-100%); }
+  0% { transform: translateX(0%); }        /* start visible */
+  100% { transform: translateX(-100%); }   /* scroll completely left */
 }
 
 /* Tablets */
 @media (max-width: 768px) {
   .marquee {
     font-size: 1em;
-    animation: scroll 25s linear infinite; /* slower on tablet */
+    animation: scroll 40s linear infinite; /* slower on tablet */
   }
 }
 
@@ -291,7 +292,7 @@ img {
 @media (max-width: 480px) {
   .marquee {
     font-size: 0.9em;
-    animation: scroll 20s linear infinite;  /* slower on mobile */
+    animation: scroll 30s linear infinite; /* slow and readable on mobile */
   }
 }
 
