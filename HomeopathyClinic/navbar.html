@@ -1,5 +1,10 @@
 <nav class="fixed top-0 left-0 w-full z-50 bg-white shadow-md">
-  <div class="container flex items-center justify-between h-16 w-full">
+  <!-- your navbar content -->
+</nav>
+
+<!-- <nav class="fixed top-0 left-0 w-full bg-white shadow z-50"> -->
+  <div class="container flex items-center justify-between h-16">
+
     <!-- Logo -->
     <a href="index.html" class="text-xl font-bold text-emerald-600">
       Piyush <span class="text-gray-700">Homeopathic Clinic</span>
@@ -7,29 +12,31 @@
 
     <!-- Desktop Menu -->
     <ul class="hidden md:flex space-x-6 font-medium">
-      <li><a href="index.html" class="nav-link"><i class="fa-solid fa-house mr-1"></i> Home</a></li>
-      <li><a href="about.html" class="nav-link"><i class="fa-solid fa-user-doctor mr-1"></i> About Doctor's</a></li>
-      <li><a href="treatments.html" class="nav-link"><i class="fa-solid fa-heart-pulse mr-1"></i> Treatments</a></li>
-      <li><a href="why-homeopathy.html" class="nav-link"><i class="fa-solid fa-leaf mr-1"></i> Why Homeopathy</a></li>
-      <li><a href="testimonials.html" class="nav-link"><i class="fa-solid fa-comments mr-1"></i> Testimonials</a></li>
-      <li><a href="gallery.html" class="nav-link"><i class="fa-solid fa-image mr-1"></i> Gallery</a></li>
-      <li><a href="contact.html" class="btn-primary"><i class="fa-solid fa-calendar-check mr-1"></i> Book Appointment</a></li>
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li><a href="about.html" class="nav-link">About Doctor's</a></li>
+      <li><a href="treatments.html" class="nav-link">Treatments</a></li>
+      <li><a href="why-homeopathy.html" class="nav-link">Why Homeopathy</a></li>
+      <li><a href="testimonials.html" class="mobile-link">Testimonials</a></li>
+      <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+      <li><a href="contact.html" class="btn-primary">Book Appointment</a></li>
     </ul>
 
     <!-- Mobile Button -->
-    <button id="menuBtn" class="md:hidden text-3xl text-gray-700">☰</button>
+    <button id="menuBtn" class="md:hidden text-3xl text-gray-700">
+      ☰
+    </button>
   </div>
 
   <!-- Mobile Menu -->
-  <div id="mobileMenu" class="hidden md:hidden bg-white border-t w-full overflow-x-hidden">
-    <ul class="flex flex-col p-4 space-y-3 font-medium w-full">
-      <li><a href="index.html" class="mobile-link flex items-center gap-2 break-words"><i class="fa-solid fa-house text-emerald-600"></i> Home</a></li>
-      <li><a href="about.html" class="mobile-link flex items-center gap-2 break-words"><i class="fa-solid fa-user-doctor text-emerald-600"></i> About Doctor's</a></li>
-      <li><a href="treatments.html" class="mobile-link flex items-center gap-2 break-words"><i class="fa-solid fa-heart-pulse text-emerald-600"></i> Treatments</a></li>
-      <li><a href="why-homeopathy.html" class="mobile-link flex items-center gap-2 break-words"><i class="fa-solid fa-leaf text-emerald-600"></i> Why Homeopathy</a></li>
-      <li><a href="testimonials.html" class="mobile-link flex items-center gap-2 break-words"><i class="fa-solid fa-comments text-emerald-600"></i> Testimonials</a></li>
-      <li><a href="gallery.html" class="mobile-link flex items-center gap-2 break-words"><i class="fa-solid fa-image text-emerald-600"></i> Gallery</a></li>
-      <li><a href="contact.html" class="btn-primary flex items-center justify-center gap-2 break-words"><i class="fa-solid fa-calendar-check"></i> Book Appointment</a></li>
+  <div id="mobileMenu" class="hidden md:hidden bg-white border-t">
+    <ul class="flex flex-col p-4 space-y-3 font-medium">
+      <li><a href="index.html" class="mobile-link">Home</a></li>
+      <li><a href="about.html" class="mobile-link">About Doctor's</a></li>
+      <li><a href="treatments.html" class="mobile-link">Treatments</a></li>
+      <li><a href="why-homeopathy.html" class="mobile-link">Why Homeopathy</a></li>
+      <li><a href="testimonials.html" class="mobile-link">Testimonials</a></li>
+      <li><a href="gallery.html" class="mobile-link">Gallery</a></li>
+      <li><a href="contact.html" class="btn-primary text-center">Book Appointment</a></li>
     </ul>
   </div>
 </nav>
