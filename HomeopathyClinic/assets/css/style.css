@@ -284,7 +284,7 @@ img {
 @media (max-width: 768px) {
   .marquee {
     font-size: 1em;
-    animation: scroll 30s linear infinite; /* slower on tablet */
+    animation: scroll 10s linear infinite; /* slower on tablet */
   }
 }
 
@@ -292,9 +292,10 @@ img {
 @media (max-width: 480px) {
   .marquee {
     font-size: 0.9em;
-    animation: scroll 30s linear infinite; /* slow and readable on mobile */
+    animation: scroll 10s linear infinite; /* slow and readable on mobile */
   }
 }
+
 
 
 
