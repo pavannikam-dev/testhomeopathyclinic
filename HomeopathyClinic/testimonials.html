@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>Patient Testimonials | Piyush Homeopathy Clinic</title>
+
+<meta name="description" content="Read real patient reviews and testimonials for Piyush Homeopathy Clinic. Natural, safe and effective homeopathic treatment.">
+
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- Custom CSS -->
+<link rel="stylesheet" href="assets/css/style.css">
+
+<!-- Review Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalBusiness",
+  "name": "Piyush Homeopathy Clinic",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "reviewCount": "120"
+  }
+}
+</script>
+</head>
+
+<body class="antialiased text-gray-800 bg-slate-50">
+
+<!-- NAVBAR -->
+<div id="navbar"></div>
+<script>
+fetch("navbar.html")
+  .then(res => res.text())
+  .then(html => {
+    document.getElementById("navbar").innerHTML = html;
+    if (typeof initNavbar === "function") initNavbar();
+  });
+</script>
+
+<!-- PAGE HEADER -->
+<header class="pt-28 pb-12 bg-gradient-to-r from-emerald-50 to-teal-50 text-center">
+  <h1 class="text-4xl md:text-5xl font-extrabold text-emerald-700">
+    Patient Testimonials
+  </h1>
+  <p class="mt-4 text-slate-600 max-w-xl mx-auto">
+    Real experiences from patients treated with safe and natural homeopathy
+  </p>
+</header>
+
+<!-- GOOGLE REVIEWS -->
+<section class="py-14 bg-white">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center text-emerald-700">
+      Latest Patient Reviews
+    </h2>
+
+    <div id="googleReviews" class="mt-10 grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3"></div>
+  </div>
+</section>
+
+<!-- SHARE REVIEW SECTION -->
+<section class="pb-8">
+  <div class="container mx-auto px-4">
+    <div class="rounded-2xl p-8 bg-gradient-to-r from-emerald-600 to-teal-600 text-white shadow-xl">
+
+      <h3 class="text-2xl font-semibold text-center">
+        Share Your Experience
+      </h3>
+      <p class="mt-2 text-emerald-100 text-center">
+        Your feedback helps others choose natural healing
+      </p>
+
+      <!-- WhatsApp Button -->
+      <div class="text-center mt-6">
+        <a
+          href="https://wa.me/911234567890?text=Hello%20Doctor,%20I%20would%20like%20to%20share%20my%20review"
+          target="_blank"
+          class="inline-block bg-white text-emerald-700 px-6 py-3 rounded-md font-medium shadow hover:bg-emerald-50 transition">
+          Share Review on WhatsApp
+        </a>
+      </div>
+
+      <!-- Google Form -->
+      <div class="mt-8 bg-white rounded-xl overflow-hidden">
+        <iframe
+          src="https://docs.google.com/forms/d/e/1FAIpQLSdmszkif8wZ0wwuu3uQPrEOen2BZ9zLFTWLC9f0l75yYH4Isw/viewform?embedded=true"
+          width="100%"
+          height="650"
+          frameborder="0"
+          loading="lazy">
+        </iframe>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer mt-6 bg-white">
+  <div class="container mx-auto px-4 py-8 text-center">
+    <p class="text-sm text-slate-500">
+      © <span id="year"></span> Piyush Homeopathy Clinic — All rights reserved.
+    </p>
+  </div>
+</footer>
+
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/911234567890" target="_blank" id="whatsapp-btn">
+  <img src="assets/img/whatsapp-icon.png" alt="WhatsApp">
+</a>
+
+<!-- GOOGLE REVIEWS SCRIPT -->
+<script>
+const sheetURL =
+  "https://docs.google.com/spreadsheets/d/1WqOfudz3vRZY0ejS5W8GZKgkCuPXLgvEMo_w3lE1uVA/gviz/tq?tqx=out:json";
+
+fetch(sheetURL)
+  .then(res => res.text())
+  .then(text => {
+    const json = JSON.parse(text.substring(47, text.length - 2));
+    const rows = json.table.rows;
+
+    let html = "";
+
+    const approvedReviews = rows.filter(row => {
+      const approved = row.c[5]?.v?.toUpperCase() || "";
+      return approved === "YES";
+    });
+
+    if (approvedReviews.length === 0) {
+      html = "<p class='text-center text-slate-500'>No approved reviews yet.</p>";
+    } else {
+      approvedReviews.slice(-6).reverse().forEach(row => {
+        const name = row.c[1]?.v || "Anonymous";
+        let rating = parseInt(row.c[2]?.v);
+        if (isNaN(rating) || rating < 1 || rating > 5) rating = 5;
+        const stars = "★".repeat(rating) + "☆".repeat(5 - rating);
+
+        const review = row.c[3]?.v || "";
+        const treatment = row.c[4]?.v || "";
+
+        html += `
+          <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300">
+            <p class="text-gray-800 italic text-base md:text-lg">“${review}”</p>
+            <div class="mt-4 flex items-center justify-between">
+              <span class="font-semibold text-emerald-700 text-sm md:text-base">— ${name}</span>
+              <span class="text-yellow-400 text-lg md:text-xl">${stars}</span>
+            </div>
+            ${treatment ? `<p class="text-gray-500 text-xs md:text-sm mt-2">${treatment}</p>` : ''}
+          </div>
+        `;
+      });
+    }
+
+    document.getElementById("googleReviews").innerHTML = html;
+  })
+  .catch(error => {
+    console.error(error);
+    document.getElementById("googleReviews").innerHTML =
+      "<p class='text-center text-red-500'>Unable to load reviews</p>";
+  });
+</script>
+
+<!-- YEAR -->
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+<!-- MAIN SCRIPT -->
+<script src="assets/js/script.js"></script>
+
+</body>
+</html>

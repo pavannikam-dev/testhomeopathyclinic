@@ -1,0 +1,270 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>About Doctors — Piyush Homeopathy Clinic</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Meet experienced homeopathy doctors at Piyush Homeopathy Clinic providing safe and natural treatment." />
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- Doctor Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MedicalBusiness",
+    "name": "Piyush Homeopathy Clinic",
+    "medicalSpecialty": "Homeopathy",
+    "physician": [
+      { "@type": "Physician", "name": "Dr. ABC" },
+      { "@type": "Physician", "name": "Dr. XYZ" }
+    ]
+  }
+  </script>
+</head>
+
+<body class="antialiased text-gray-800">
+
+<!-- NAVBAR -->
+<div id="navbar"></div>
+<script>
+  fetch("navbar.html")
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById("navbar").innerHTML = html;
+      initNavbar();
+    });
+</script>
+
+<!-- PAGE HEADER -->
+<header class="pt-28 pb-16 bg-gradient-to-r from-emerald-50 to-teal-50">
+  <div class="container text-center">
+    <h1 class="text-4xl md:text-5xl font-extrabold text-emerald-700" data-aos="fade-up">
+      About Doctors
+    </h1>
+    <p class="mt-4 text-slate-600 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+      Meet our experienced homeopathy physicians dedicated to natural healing.
+    </p>
+  </div>
+</header>
+
+<!-- DOCTOR TABS -->
+<div class="container text-center mt-10">
+  <div class="flex justify-center gap-4">
+    <button class="doctor-tab active" data-doctor="doc1">Dr.Suresh Patil</button>
+    <button class="doctor-tab" data-doctor="doc2">Dr.Poonam Patil</button>
+  </div>
+</div>
+
+<!-- ===================== DOCTOR 1 ===================== -->
+<section id="doc1" class="doctor-content py-16">
+  <div class="container grid md:grid-cols-2 gap-10 items-center">
+
+    <div data-aos="fade-right" class="flex justify-center">
+      <div class="rounded-2xl overflow-hidden shadow-xl max-w-md w-full">
+        <img src="assets/img/DrDadaimg.jpg" alt="Dr ABC" class="w-full h-[420px] object-cover">
+      </div>
+    </div>
+
+    <div data-aos="fade-left">
+      <h2 class="text-3xl font-bold text-emerald-700">Dr.Suresh Patil</h2>
+      <p class="mt-2 font-medium text-slate-600">DHMS, DNB (London)</p>
+
+      <p class="mt-6 text-slate-700 leading-relaxed">
+        Dr.Suresh Patil has more than <strong>20+ years</strong> of experience in treating
+        acute and chronic diseases using classical homeopathy.
+      </p>
+
+      <div class="mt-6 grid grid-cols-2 gap-4">
+        <div class="card text-center">
+          <h3 class="text-2xl font-bold text-emerald-600">20+</h3>
+          <p class="text-sm">Years Experience</p>
+        </div>
+        <div class="card text-center">
+          <h3 class="text-2xl font-bold text-emerald-600">5000+</h3>
+          <p class="text-sm">Happy Patients</p>
+        </div>
+      </div>
+
+      <div class="mt-8 flex gap-4">
+        <a href="contact.html" class="btn-primary">Book Appointment</a>
+        <button onclick="openDoctorModal('abc')" class="btn-outline">View Profile</button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- QUALIFICATIONS -->
+<section class="py-16">
+  <div class="container">
+    <h2 class="text-3xl font-bold text-center mb-10">Qualifications & Expertise</h2>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="card">
+        <h3 class="font-semibold text-xl mb-2">Education</h3>
+        <ul class="list-disc list-inside text-sm">
+          <li>DHMS</li>
+          <li>DNB (London)</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3 class="font-semibold text-xl mb-2">Specialization</h3>
+        <ul class="list-disc list-inside text-sm">
+          <li>Chronic Diseases</li>
+          <li>Skin & Hair</li>
+          <li>Women & Child Health</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3 class="font-semibold text-xl mb-2">Approach</h3>
+        <p class="text-sm">
+          Personalized classical homeopathy focused on root-cause healing.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHILOSOPHY -->
+<section class="py-16 bg-slate-50">
+  <div class="container max-w-3xl text-center">
+    <h2 class="text-3xl font-bold mb-6">Treatment Philosophy</h2>
+    <p class="text-slate-700 leading-relaxed">
+      “Homeopathy treats the patient as a whole, not just the disease.”
+      We focus on safe, gentle and long-lasting healing.
+    </p>
+  </div>
+</section>
+</section>
+
+<!-- ===================== DOCTOR 2 ===================== -->
+<section id="doc2" class="doctor-content py-16 bg-slate-50 hidden">
+  <div class="container grid md:grid-cols-2 gap-10 items-center">
+
+    <div data-aos="fade-left" class="md:order-2 flex justify-center">
+      <div class="rounded-2xl overflow-hidden shadow-xl max-w-md w-full">
+        <img src="assets/img/DrPunamimg.jpg" alt="Dr XYZ" class="w-full h-[420px] object-cover">
+      </div>
+    </div>
+
+    <div data-aos="fade-right" class="md:order-1">
+      <h2 class="text-3xl font-bold text-emerald-700">Dr.Poonam Patil</h2>
+      <p class="mt-2 font-medium text-slate-600">BHMS</p>
+
+      <p class="mt-6 text-slate-700 leading-relaxed">
+        Dr.Poonam Patil specializes in women & child health, skin disorders,
+        and stress-related conditions with a holistic approach.
+      </p>
+
+      <div class="mt-6 grid grid-cols-2 gap-4">
+        <div class="card text-center">
+          <h3 class="text-2xl font-bold text-emerald-600">7+</h3>
+          <p class="text-sm">Years Experience</p>
+        </div>
+        <div class="card text-center">
+          <h3 class="text-2xl font-bold text-emerald-600">300+</h3>
+          <p class="text-sm">Happy Patients</p>
+        </div>
+      </div>
+
+      <div class="mt-8 flex gap-4">
+        <a href="contact.html" class="btn-primary">Book Appointment</a>
+        <button onclick="openDoctorModal('xyz')" class="btn-outline">View Profile</button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- QUALIFICATIONS -->
+<section class="py-16">
+  <div class="container">
+    <h2 class="text-3xl font-bold text-center mb-10">Qualifications & Expertise</h2>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="card">
+        <h3 class="font-semibold text-xl mb-2">Education</h3>
+        <ul class="list-disc list-inside text-sm">
+          <li>BHMS</li>
+          <li>MD (Homeopathy)</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3 class="font-semibold text-xl mb-2">Specialization</h3>
+        <ul class="list-disc list-inside text-sm">
+          <li>Chronic Diseases</li>
+          <li>Skin & Hair</li>
+          <li>Women & Child Health</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3 class="font-semibold text-xl mb-2">Approach</h3>
+        <p class="text-sm">
+          Personalized classical homeopathy focused on root-cause healing.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHILOSOPHY -->
+<section class="py-16 bg-slate-50">
+  <div class="container max-w-3xl text-center">
+    <h2 class="text-3xl font-bold mb-6">Treatment Philosophy</h2>
+    <p class="text-slate-700 leading-relaxed">
+      “Homeopathy treats the patient as a whole, not just the disease.”
+      We focus on safe, gentle and long-lasting healing.
+    </p>
+  </div>
+</section>
+</section>
+
+
+
+<!-- FOOTER -->
+<footer class="site-footer mt-12">
+  <div class="container py-8 text-center">
+    <p class="text-sm text-slate-500">
+      © <span id="year"></span> Piyush Homeopathy Clinic — All rights reserved.
+    </p>
+  </div>
+</footer>
+
+<!-- WHATSAPP -->
+<a href="https://wa.me/911234567890" target="_blank" id="whatsapp-btn">
+  <img src="assets/img/whatsapp-icon.png" alt="WhatsApp">
+</a>
+
+<!-- DOCTOR MODAL -->
+<div id="doctorModal" class="fixed inset-0 bg-black/50 hidden items-center justify-center z-50">
+  <div class="bg-white rounded-xl max-w-lg w-full p-6 relative">
+    <button onclick="closeDoctorModal()" class="absolute top-3 right-3 text-xl">✕</button>
+    <div id="modalContent"></div>
+  </div>
+</div>
+
+<!-- SCRIPTS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="assets/js/script.js"></script>
+<script>
+AOS.init();
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

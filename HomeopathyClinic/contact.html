@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Contact Us</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body class="bg-gray-50">
+
+<!-- Navbar -->
+<div id="navbar"></div>
+<script>
+fetch("navbar.html").then(r=>r.text()).then(d=>{
+  document.getElementById("navbar").innerHTML=d;
+  if (typeof initNavbar === "function") initNavbar();
+});
+</script>
+
+<!-- Header -->
+<header class="pt-28 pb-12 bg-emerald-50 text-center">
+  <h1 class="text-4xl font-bold text-emerald-700">Contact Us</h1>
+  <p class="text-red-600 mt-2 font-medium">
+    For medical emergencies, call <strong>108</strong> immediately.
+  </p>
+</header>
+
+<section class="py-12">
+<div class="container mx-auto px-4 grid grid-cols-1 lg:grid-cols-3 gap-10">
+
+  <!-- Branch 1 -->
+  <div class="bg-white p-6 rounded shadow space-y-2">
+    <h3 class="text-lg font-semibold text-emerald-700">Hospital Branch 1</h3>
+    <!-- <p>Shop No-6, Chaitnydeep Market, Gandhi Chowk, Chopda, Maharashtra 425107.</p> -->
+<h5 class="text-sm font-semibold text-emerald-700">Shop No-6, Chaitnydeep Market, 
+  Gandhi Chowk, Chopda, Maharashtra 425107.</h5>
+
+    <a href="tel:+919730475811"
+       class="inline-block text-emerald-600 font-medium">
+      📞 +91 9730475811
+    </a>
+
+    <p>Mon–Sat 10AM–7PM</p>
+
+    <!-- Google Map -->
+    <iframe class="w-full h-40 rounded mt-2"
+      src="https://www.google.com/maps?q=Shop No-6, Chaitnydeep Market, Gandhi Chowk, Chopda, Maharashtra 425107+1&output=embed"
+      loading="lazy"></iframe>
+  </div>
+
+  <!-- Branch 2 -->
+  <div class="bg-white p-6 rounded shadow space-y-2">
+    <h3 class="text-lg font-semibold text-emerald-700">Hospital Branch 2</h3>
+    <!-- <p>Opposite Of Nimani Bust Stand, Panchvati Nashik.</p> -->
+<h5 class="text-sm font-semibold text-emerald-700">Opposite Of Nimani Bus Stand, Panchvati Nashik.</h5>
+
+    <a href="tel:+919730475811"
+       class="inline-block text-emerald-600 font-medium">
+      📞 +91 9730475811
+    </a>
+
+    <p>Mon–Sat 9AM–6PM</p>
+
+    <!-- Google Map -->
+    <iframe class="w-full h-40 rounded mt-2"
+      src="https://www.google.com/maps?q=Shop No-6, Chaitnydeep Market, Gandhi Chowk, Chopda, Maharashtra 425107+2&output=embed"
+      loading="lazy"></iframe>
+  </div>
+
+  <!-- Form -->
+  <form class="bg-white p-6 rounded shadow space-y-4"
+        onsubmit="sendWhatsApp(); return false;">
+
+    <h3 class="text-xl font-semibold text-emerald-700">
+      Appointment / Inquiry
+    </h3>
+
+    <input id="name" required placeholder="Name"
+      class="w-full border p-2 rounded">
+
+    <input id="phone" required placeholder="Phone"
+      class="w-full border p-2 rounded">
+
+    <!-- Appointment Date -->
+    <input id="date" type="date"
+      class="w-full border p-2 rounded">
+
+    <select id="reason"
+      class="w-full border p-2 rounded">
+      <option>Appointment Request</option>
+      <option>General Inquiry</option>
+      <option>Billing</option>
+      <option>Feedback</option>
+    </select>
+
+    <textarea id="message" placeholder="Message"
+      class="w-full border p-2 rounded h-24"></textarea>
+
+    <button class="btn-primary w-full">
+      Send via WhatsApp
+    </button>
+
+    <!-- Email Backup -->
+    <button type="button"
+      onclick="sendEmail()"
+      class="w-full border border-emerald-600 text-emerald-600 py-2 rounded">
+      Send via Email
+    </button>
+
+    <p class="text-sm text-red-600">
+      ⚠️ Non-urgent inquiries only. For emergencies call 108.
+    </p>
+  </form>
+
+</div>
+</section>
+
+<!-- Floating WhatsApp Button -->
+<a href="https://wa.me/919730475811"
+   target="_blank"
+   class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg text-xl">
+  🟢
+</a>
+
+<!-- Scripts -->
+<script>
+const whatsappNumber = "919730475811"; // 🔴 CHANGE THIS
+const emailAddress = "hospital@email.com"; // 🔴 CHANGE THIS
+
+
+function sendWhatsApp() {
+  const name = document.getElementById("name").value.trim();
+  const phone = document.getElementById("phone").value.trim();
+  const date = document.getElementById("date").value;
+  const reason = document.getElementById("reason").value;
+  const message = document.getElementById("message").value.trim();
+
+  const whatsappNumber = "919730475811"; // hospital number
+
+  const formattedMessage =
+`🏥 *Hospital Inquiry*
+
+👤 Name: ${name}
+📞 Phone: ${phone}
+📅 Appointment Date: ${date || "Not specified"}
+📌 Reason: ${reason}
+
+📝 Message:
+${message || "N/A"}
+
+⚠️ Non-urgent inquiry`;
+
+  const encodedMessage = encodeURIComponent(formattedMessage);
+  const url = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+  window.open(url, "_blank");
+}
+
+
+
+function sendEmail() {
+  const subject = "Hospital Inquiry";
+  const body =
+    `Name: ${nameEl.value}\n` +
+    `Phone: ${phoneEl.value}\n` +
+    `Date: ${dateEl.value}\n` +
+    `Reason: ${reasonEl.value}\n` +
+    `Message: ${messageEl.value}`;
+
+  window.location.href =
+    `mailto:${emailAddress}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}
+
+const nameEl = document.getElementById("name");
+const phoneEl = document.getElementById("phone");
+const dateEl = document.getElementById("date");
+const reasonEl = document.getElementById("reason");
+const messageEl = document.getElementById("message");
+</script>
+
+<script src="assets/js/script.js"></script>
+</body>
+</html>

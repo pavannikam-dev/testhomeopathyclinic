@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Why Homeopathy</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+<div id="navbar"></div>
+<script>
+fetch("navbar.html").then(r=>r.text()).then(d=>{
+  document.getElementById("navbar").innerHTML=d; initNavbar();
+});
+</script>
+
+<header class="pt-28 pb-12 bg-teal-50 text-center">
+  <h1 class="text-4xl font-bold text-teal-700">Why Choose Homeopathy?</h1>
+</header>
+
+<section>
+<div class="container max-w-3xl text-center">
+<p class="mb-6">Homeopathy is a natural system of medicine that treats the root cause of disease.</p>
+<ul class="space-y-4 text-left">
+<li>✔ No side effects</li>
+<li>✔ Treats root cause</li>
+<li>✔ Safe for children & elderly</li>
+<li>✔ Long-term relief</li>
+<li>✔ Natural & gentle medicines</li>
+</ul>
+</div>
+</section>
+
+<script src="assets/js/script.js"></script>
+</body>
+</html>

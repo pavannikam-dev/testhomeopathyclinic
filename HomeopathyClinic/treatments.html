@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Treatments — Piyush Homeopathy Clinic</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="assets/css/style.css">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+
+<body>
+<div id="navbar"></div>
+<script>
+fetch("navbar.html").then(r=>r.text()).then(d=>{
+  document.getElementById("navbar").innerHTML=d; initNavbar();
+});
+</script>
+
+<header class="pt-28 pb-12 bg-emerald-50 text-center">
+  <h1 class="text-4xl font-bold text-emerald-700">Our Treatments</h1>
+</header>
+
+<section>
+<div class="container grid md:grid-cols-3 gap-8">
+  <div class="card">Skin Disorders (Eczema, Psoriasis, Acne)</div>
+  <div class="card">Hair Fall & Alopecia</div>
+  <div class="card">Asthma & Allergy</div>
+  <div class="card">Digestive Problems</div>
+  <div class="card">PCOD & Women’s Health</div>
+  <div class="card">Diabetes & Thyroid</div>
+  <div class="card">Child Diseases</div>
+  <div class="card">Arthritis & Joint Pain</div>
+  <div class="card">Stress & Anxiety</div>
+</div>
+</section>
+
+<footer class="site-footer mt-12">
+<div class="container py-6 text-center text-sm">
+© <span id="year"></span> Homeopathy Clinic
+</div>
+</footer>
+
+<script src="assets/js/script.js"></script>
+<script>document.getElementById("year").textContent=new Date().getFullYear();</script>
+</body>
+</html>

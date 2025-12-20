@@ -1,0 +1,257 @@
+
+/* ===========================
+   GLOBAL STYLES
+   Homeopathy Clinic Website
+   =========================== */
+
+html {
+  scroll-behavior: smooth;
+}
+#mobileMenu a{
+  color: white !important;
+}
+#mobileMenu{
+  background-color: black;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  /* background-color: #f9fafb; */
+   background-color: #f0fdf4;
+  color: #1f2937;
+}
+
+/* ---------- CONTAINER ---------- */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* ---------- SECTIONS ---------- */
+section {
+  padding: 4rem 0;
+}
+
+/* ---------- NAVBAR ---------- */
+nav {
+  transition: box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.nav-link {
+  color: #374151;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #059669;
+}
+
+.mobile-link {
+  color: #374151;
+}
+
+.mobile-link:hover {
+  color: #059669;
+}
+
+/* ---------- BUTTONS ---------- */
+.btn-primary {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(90deg, #059669, #0d9488);
+  color: #ffffff;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border: 1px solid #059669;
+  color: #059669;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+  background-color: #059669;
+  color: #ffffff;
+}
+
+/* ---------- CARD ---------- */
+.card {
+  background-color: #ffffff;
+  padding: 1.75rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+}
+
+/* ---------- FOOTER ---------- */
+.site-footer {
+  background-color: #ffffff;
+  border-top: 1px solid #e5e7eb;
+}
+
+/* ---------- WHATSAPP BUTTON ---------- */
+/* ---------- WHATSAPP BUTTON ---------- */
+/* ---------- WHATSAPP BUTTON ---------- */
+#whatsapp-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 55px;
+  height: 55px;
+  z-index: 9999;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#whatsapp-btn.show {
+  opacity: 1;
+  transform: scale(1);
+}
+
+#whatsapp-btn img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+/* ---------- FORMS ---------- */
+input, textarea {
+  outline: none;
+}
+
+input:focus, textarea:focus {
+  border-color: #059669;
+  box-shadow: 0 0 0 1px #059669;
+}
+
+/* ---------- GALLERY ---------- */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 768px) {
+  section {
+    padding: 3rem 0;
+  }
+
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+}
+
+/* *************************************************************** */
+.doctor-tab {
+  width: 100%;
+  max-width: 220px;
+  padding: 12px 24px;
+  border-radius: 9999px;
+  background-color: #22C55E; /* Green */
+  color: #FFFFFF;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.doctor-tab:hover {
+  background-color: #16A34A; /* Darker green */
+  transform: translateY(-2px);
+}
+
+.doctor-tab.active {
+  background-color: #15803D; /* Active green */
+  box-shadow: 0 6px 16px rgba(21, 128, 61, 0.4);
+}
+
+/* Brochure Section */
+.brochure-section {
+    padding: 60px 20px;
+    background-color: #f5f9fc;
+}
+
+.brochure-container {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.brochure-image img {
+    width: 100%;
+    max-width: 350px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.brochure-content {
+    flex: 1;
+}
+
+.brochure-content h2 {
+    font-size: 32px;
+    color: #1b4d89;
+    margin-bottom: 15px;
+}
+
+.brochure-content p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+.download-btn {
+    display: inline-block;
+    background-color: #1b4d89;
+    color: #fff;
+    padding: 14px 28px;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.download-btn:hover {
+    background-color: #163d6d;
+    transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .brochure-container {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+

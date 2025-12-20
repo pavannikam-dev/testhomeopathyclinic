@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Gallery</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+<div id="navbar"></div>
+<script>
+fetch("navbar.html").then(r=>r.text()).then(d=>{
+  document.getElementById("navbar").innerHTML=d; initNavbar();
+});
+</script>
+
+<header class="pt-28 pb-12 bg-gray-100 text-center">
+<h1 class="text-4xl font-bold">Clinic Gallery</h1>
+</header>
+
+<section>
+<div class="container grid md:grid-cols-3 gap-6">
+<img src="assets/img/clinic1.jpg" class="rounded-lg shadow">
+<img src="assets/img/clinic2.jpg" class="rounded-lg shadow">
+<img src="assets/img/clinic3.jpg" class="rounded-lg shadow">
+</div>
+</section>
+
+<script src="assets/js/script.js"></script>
+</body>
+</html>
