@@ -41,11 +41,11 @@ document.querySelectorAll('.doctor-tab').forEach(tab => {
 // Doctor Modal
 function openDoctorModal(doc) {
   const data = {
-    abc: `
+    suresh: `
       <h2 class="text-2xl font-bold">Dr. ABC</h2>
       <p>10+ years experience in chronic diseases.</p>
     `,
-    xyz: `
+    poonam: `
       <h2 class="text-2xl font-bold">Dr. XYZ</h2>
       <p>Specialist in women & child health.</p>
     `
@@ -58,3 +58,4 @@ function openDoctorModal(doc) {
 function closeDoctorModal() {
   document.getElementById('doctorModal').classList.add('hidden');
 }
+
