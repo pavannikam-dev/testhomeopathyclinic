@@ -186,8 +186,29 @@ const messageEl = document.getElementById("message");
 </script>
 
 <script src="assets/js/script.js"></script>
+
+<!-- FOOTER -->
+<div id="footer"></div>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    fetch("components/footer.html")
+      .then(res => res.text())
+      .then(html => {
+        const footerContainer = document.getElementById("footer");
+        footerContainer.innerHTML = html;
+
+        const yearSpan = footerContainer.querySelector("#year");
+        if (yearSpan) {
+          yearSpan.textContent = new Date().getFullYear();
+        }
+      })
+      .catch(err => console.error("Footer load failed:", err));
+  });
+</script>
+  
 </body>
 </html>
+
 
 
 
