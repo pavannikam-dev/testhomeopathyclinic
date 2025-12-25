@@ -45,8 +45,8 @@ function openDoctorModal(doc) {
       <h2 class="text-2xl font-bold">Dr. Suresh T. Patil</h2>
       <p>10+ years experience in chronic diseases.</p>
     `,
-    poonam: `
-      <h2 class="text-2xl font-bold">Dr. Poonam Patil</h2>
+    punam: `
+      <h2 class="text-2xl font-bold">Dr. Punam Patil</h2>
       <p>Specialist in women & child health.</p>
     `
   };
@@ -58,5 +58,6 @@ function openDoctorModal(doc) {
 function closeDoctorModal() {
   document.getElementById('doctorModal').classList.add('hidden');
 }
+
 
 
