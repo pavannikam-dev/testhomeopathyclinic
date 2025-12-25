@@ -39,15 +39,28 @@ fetch("navbar.html").then(r=>r.text()).then(d=>{
 </div>
 </section>
 
-<footer class="site-footer mt-12">
-<div class="container py-6 text-center text-sm">
-© <span id="year"></span>Piyush Homeopathic Clinic
-</div>
-</footer>
+<!-- FOOTER -->
+<div id="footer"></div>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    fetch("components/footer.html")
+      .then(res => res.text())
+      .then(html => {
+        const footerContainer = document.getElementById("footer");
+        footerContainer.innerHTML = html;
 
+        const yearSpan = footerContainer.querySelector("#year");
+        if (yearSpan) {
+          yearSpan.textContent = new Date().getFullYear();
+        }
+      })
+      .catch(err => console.error("Footer load failed:", err));
+  });
+</script>
 <script src="assets/js/script.js"></script>
 <script>document.getElementById("year").textContent=new Date().getFullYear();</script>
 </body>
 </html>
+
 
 
