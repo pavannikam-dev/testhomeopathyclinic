@@ -43,7 +43,7 @@ function openDoctorModal(doc) {
   const data = {
     suresh: `
       <h2 class="text-2xl font-bold">Dr. Suresh T. Patil</h2>
-      <p>10+ years experience in chronic diseases.</p>
+      <p>45+ years experience in chronic diseases.</p>
     `,
     punam: `
       <h2 class="text-2xl font-bold">Dr. Punam Patil</h2>
@@ -58,6 +58,7 @@ function openDoctorModal(doc) {
 function closeDoctorModal() {
   document.getElementById('doctorModal').classList.add('hidden');
 }
+
 
 
 
