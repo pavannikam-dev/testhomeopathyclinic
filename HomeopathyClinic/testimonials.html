@@ -104,13 +104,23 @@ fetch("navbar.html")
 </section>
 
 <!-- FOOTER -->
-<footer class="site-footer mt-6 bg-white">
-  <div class="container mx-auto px-4 py-8 text-center">
-    <p class="text-sm text-slate-500">
-      © <span id="year"></span> Piyush Homeopathic Clinic — All rights reserved.
-    </p>
-  </div>
-</footer>
+<div id="footer"></div>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    fetch("components/footer.html")
+      .then(res => res.text())
+      .then(html => {
+        const footerContainer = document.getElementById("footer");
+        footerContainer.innerHTML = html;
+
+        const yearSpan = footerContainer.querySelector("#year");
+        if (yearSpan) {
+          yearSpan.textContent = new Date().getFullYear();
+        }
+      })
+      .catch(err => console.error("Footer load failed:", err));
+  });
+</script>
 
 <!-- FLOATING WHATSAPP -->
 <a href="https://wa.me/911234567890" target="_blank" id="whatsapp-btn">
@@ -179,5 +189,6 @@ document.getElementById("year").textContent = new Date().getFullYear();
 
 </body>
 </html>
+
 
 
