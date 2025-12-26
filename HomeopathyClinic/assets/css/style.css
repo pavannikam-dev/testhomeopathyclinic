@@ -253,11 +253,19 @@ img {
         text-align: center;
     }
 }
-
-
 .footer-bg {
   background-color:#1f2937;
   color: white;
+}
+
+/* -------Header---------------------------------- */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
 }
 
 
