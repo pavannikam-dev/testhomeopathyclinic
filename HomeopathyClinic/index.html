@@ -40,22 +40,78 @@
 <div style="height:64px;"></div>
 
 
-<marquee 
-    behavior="scroll" 
-    direction="left" 
-    scrollamount="5" 
-    style="width:100%; 
-           background: linear-gradient(to right, #a8e6cf, #dcedc1); 
-           color: #f01b07; 
-           font-weight: bold; 
-           font-size: 20px; 
-           padding: 10px; 
-           border: 2px solid #56ab2f; 
-           border-radius: 10px;">
-  Welcome to Piyush Homeopathy Clinic! &nbsp;&nbsp;|&nbsp;&nbsp;
-  Expert Homeopathic Care by Dr.Suresh T. Patil & Dr.Poonam Patil &nbsp;&nbsp;|&nbsp;&nbsp;
-  Book Your Appointment Today!
-</marquee>
+<!-- Modern Seamless Marquee -->
+<div class="marquee-container relative overflow-hidden border-2 border-green-600 rounded-xl">
+  <!-- Gradient fade left -->
+  <div class="absolute left-0 top-0 h-full w-12 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none"></div>
+  <!-- Gradient fade right -->
+  <div class="absolute right-0 top-0 h-full w-12 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none"></div>
+
+  <!-- Scrolling Text -->
+  <div class="marquee flex whitespace-nowrap animate-marquee hover:animation-pause py-3 px-4">
+    <span class="mx-6 text-white text-lg md:text-xl lg:text-2xl">
+      Welcome to Piyush Homeopathy Clinic!
+    </span>
+    <span class="mx-6 text-white text-lg md:text-xl lg:text-2xl">|</span>
+    <span class="mx-6 text-white text-lg md:text-xl lg:text-2xl">
+      Expert Homeopathic Care by Dr. Suresh T. Patil & Dr. Poonam Patil
+    </span>
+    <span class="mx-6 text-white text-lg md:text-xl lg:text-2xl">|</span>
+    <span class="mx-6 text-white text-lg md:text-xl lg:text-2xl">
+      Book Your Appointment Today!
+    </span>
+    <!-- Repeat text for seamless scroll -->
+    <span class="mx-6 text-white text-lg md:text-xl lg:text-2xl">
+      Welcome to Piyush Homeopathy Clinic!
+    </span>
+    <span class="mx-6 text-white text-lg md:text-xl lg:text-2xl">|</span>
+    <span class="mx-6 text-white text-lg md:text-xl lg:text-2xl">
+      Expert Homeopathic Care by Dr. Suresh T. Patil & Dr. Poonam Patil
+    </span>
+    <span class="mx-6 text-white text-lg md:text-xl lg:text-2xl">|</span>
+    <span class="mx-6 text-white text-lg md:text-xl lg:text-2xl">
+      Book Your Appointment Today!
+    </span>
+  </div>
+</div>
+
+<!-- CSS -->
+<style>
+.marquee-container {
+  width: 100%;
+  background-color: black;
+}
+
+/* Seamless scroll animation */
+.marquee {
+  display: inline-block;
+  animation: marquee 30s linear infinite;
+}
+
+/* Hover pause */
+.marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Keyframes for smooth infinite scroll */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Responsive font sizes */
+@media (max-width: 768px) {
+  .marquee span {
+    font-size: 16px;
+  }
+}
+@media (max-width: 480px) {
+  .marquee span {
+    font-size: 14px;
+  }
+}
+</style>
+
 
   
 <!-- HERO / HEADER -->
@@ -362,6 +418,7 @@
 
 </body>
 </html>
+
 
 
 
