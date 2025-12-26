@@ -12,7 +12,6 @@
 <link rel="stylesheet" href="assets/css/style.css">
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
-
 <body>
 <div id="navbar"></div>
 <script>
@@ -21,6 +20,9 @@ fetch("navbar.html").then(r=>r.text()).then(d=>{
 });
 </script>
 
+<!-- <header class="pt-20 pb-6 bg-emerald-50 text-center">
+  <h1 class="text-4xl font-bold text-emerald-700">Our Treatments</h1>
+</header> -->
 
 <header class="bg-gradient-to-b from-emerald-50 to-white text-center 
                pt-14 pb-6 sm:pt-20 sm:pb-10 overflow-hidden">
@@ -67,9 +69,10 @@ fetch("navbar.html").then(r=>r.text()).then(d=>{
 
 
 <section>
-  
-<div class="max-w-7xl mx-auto px-4 py-6">
+ <div class="max-w-7xl mx-auto px-4 py-6">
+
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+
 
     <!-- Card 1 -->
     <div class="group p-6 rounded-xl shadow-md flex items-center gap-4
@@ -329,7 +332,49 @@ fetch("navbar.html").then(r=>r.text()).then(d=>{
   .delay-1700 { animation-delay: 1.7s; }
 </style>
 
-  
+
+<!-- Animation CSS -->
+<style>
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+  @keyframes fadeUp {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+
+  .animate-fade-up { animation: fadeUp 0.6s forwards; }
+
+  /* Stagger delays */
+  .delay-100 { animation-delay: 0.1s; }
+  .delay-200 { animation-delay: 0.2s; }
+  .delay-300 { animation-delay: 0.3s; }
+  .delay-400 { animation-delay: 0.4s; }
+  .delay-500 { animation-delay: 0.5s; }
+  .delay-600 { animation-delay: 0.6s; }
+  .delay-700 { animation-delay: 0.7s; }
+  .delay-800 { animation-delay: 0.8s; }
+  .delay-900 { animation-delay: 0.9s; }
+  .delay-1000 { animation-delay: 1s; }
+  .delay-1100 { animation-delay: 1.1s; }
+  .delay-1200 { animation-delay: 1.2s; }
+  .delay-1300 { animation-delay: 1.3s; }
+  .delay-1400 { animation-delay: 1.4s; }
+  .delay-1500 { animation-delay: 1.5s; }
+  .delay-1600 { animation-delay: 1.6s; }
+  .delay-1700 { animation-delay: 1.7s; }
+</style>
+
+
+
+
 </section>
 
 <!-- FOOTER -->
@@ -350,22 +395,20 @@ fetch("navbar.html").then(r=>r.text()).then(d=>{
       .catch(err => console.error("Footer load failed:", err));
   });
 </script>
+
 <script src="assets/js/script.js"></script>
 <script>document.getElementById("year").textContent=new Date().getFullYear();</script>
 
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
   AOS.init({
     duration: 700,
     once: true
   });
 </script>
+
+
 </body>
 </html>
-
-
-
-
-
 
 
