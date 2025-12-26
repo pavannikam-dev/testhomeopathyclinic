@@ -21,9 +21,50 @@ fetch("navbar.html").then(r=>r.text()).then(d=>{
 });
 </script>
 
-<header class="pt-20 pb-6 bg-emerald-50 text-center">
-  <h1 class="text-4xl font-bold text-emerald-700">Our Treatments</h1>
+
+<header class="bg-gradient-to-b from-emerald-50 to-white text-center 
+               pt-14 pb-6 sm:pt-20 sm:pb-10 overflow-hidden">
+
+  <!-- Breadcrumb -->
+  <nav class="text-xs sm:text-sm text-gray-500 mb-4"
+       data-aos="fade-down">
+    <a href="index.html" class="hover:text-emerald-600">Home</a>
+    <span class="mx-2">/</span>
+    <span class="text-emerald-700 font-medium">Treatments</span>
+  </nav>
+
+  <!-- Icon -->
+  <div class="flex justify-center mb-3"
+       data-aos="zoom-in">
+    <span class="text-4xl sm:text-5xl text-emerald-600 animate-float">
+      🩺
+    </span>
+  </div>
+
+  <!-- Title -->
+  <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold 
+             text-emerald-700 tracking-tight"
+      data-aos="fade-up"
+      data-aos-delay="150">
+    Our Treatments
+  </h1>
+
+  <!-- Divider -->
+  <div class="mt-3 flex justify-center"
+       data-aos="fade-up"
+       data-aos-delay="250">
+    <span class="h-1 w-16 bg-emerald-500 rounded-full"></span>
+  </div>
+
+  <!-- Subtitle -->
+  <p class="mt-4 text-sm sm:text-base text-gray-600 max-w-xl mx-auto"
+     data-aos="fade-up"
+     data-aos-delay="350">
+    Personalized homeopathic care for chronic, acute, and lifestyle-related conditions
+  </p>
+
 </header>
+
 
 <section>
   
@@ -313,6 +354,7 @@ fetch("navbar.html").then(r=>r.text()).then(d=>{
 <script>document.getElementById("year").textContent=new Date().getFullYear();</script>
 </body>
 </html>
+
 
 
 
